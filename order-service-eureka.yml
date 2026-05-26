@@ -1,0 +1,26 @@
+eureka:
+    client:
+        fetch-registry: true
+        healthcheck:
+            enabled: true
+        register-with-eureka: true
+        service-url:
+            defaultZone: http://localhost:8761/eureka/
+server:
+    port: 8888
+spring:
+    application:
+        name: order-service-eureka
+    datasource:
+        driver-class-name: org.postgresql.Driver
+        password: kimquan1
+        url: jdbc:postgresql://localhost:5432/order_db
+        username: postgres
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+                format_sql: true
+        show-sql: true
