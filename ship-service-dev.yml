@@ -1,16 +1,15 @@
 eureka:
-    client:
-        fetch-registry: true
-        register-with-eureka: true
-        service-url:
-            defaultZone: http://localhost:8761/eureka/
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
 server:
-    port: 8787
+  port: 8787
 spring:
-    application:
-        name: ship-service
-    cloud:
-      config:
-        uri: http://localhost:8888
-    profiles:
-      active: dev
+  application:
+    name: ship-service
+  config:
+    import: "optional:configserver:http://localhost:8888"
+  profiles:
+    active: dev
