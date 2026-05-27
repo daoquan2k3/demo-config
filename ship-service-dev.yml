@@ -7,6 +7,14 @@ eureka:
 server:
   port: 8787
 spring:
+  cloud:
+    bus:
+      enabled: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
   application:
     name: ship-service
   config:
